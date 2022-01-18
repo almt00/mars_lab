@@ -1,12 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button className="btn btn-danger"></button>
+        <button className="btn btn-warning"></button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

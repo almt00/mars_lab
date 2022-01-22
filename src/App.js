@@ -4,6 +4,7 @@ import { faCircle, faCopyright, faMapMarkerAlt} from '@fortawesome/free-solid-sv
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Main from './components/Main';
 
 library.add(faCopyright, faCircle, faMapMarkerAlt)
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className='App'>
       <Navbar/>
+      <Main/>
       <Footer />
     </div>
   );

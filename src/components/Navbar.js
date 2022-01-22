@@ -5,8 +5,30 @@ import InputCity from "./InputCity";
 let navItems = ["Recente", "5 dias", "Foto", "Comparar"];
 
 function Navbar() {
+  const isMars = true;
+
+  function showSwitch() {
+    if (isMars == true) {
+      return <img id="switchMars" src="switch-elements-mars.svg" alt="Switch" className="switchPlanet w-50"></img>
+    } else {
+      return <img id="switchEarth" src="switch-elements-earth.svg" alt="Switch" className="switchPlanet w-50"></img>
+    }
+  }
+
+  /*   function switchPlanet () {
+    switch (isMars) {
+      case true:
+        img = "switch-elements-earth.svg";
+        break;
+      case false:
+        img = "switch-elements-mars.svg";
+        break;
+      default:
+        break;
+    }
+  }; */
   return (
-    <nav className="navbar navbar-expand-sm fixed-top" id="navbarNav">
+    <nav className="navbar navbar-expand-sm fixed-top mx-5" id="navbarNav">
       <div className="container-fluid">
         <form className="d-flex align-items-center">
           <InputCity />
@@ -24,7 +46,7 @@ function Navbar() {
             })}
             <li className="nav-item">
               <a className="nav-link text-white" href="#">
-                <img src="switch-elements.svg" alt="Switch" className=" w-50" ></img>
+                {showSwitch()}
               </a>
             </li>
           </ul>

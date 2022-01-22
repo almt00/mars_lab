@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FiveDays from './FiveDays';
 
 function Main() {
-  return<FiveDays/>
+  return < FiveDays />
+  
 }
 export default Main;

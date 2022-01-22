@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 import InputCity from "./InputCity";
+import swithEarth from '../assets/switch-elements-earth.svg';
+import swithMars from '../assets/switch-elements-mars.svg';
 
 
 let navItems = ["Recente", "5 dias", "Foto", "Comparar"];
@@ -10,9 +12,9 @@ function Navbar() {
 
   function showSwitch() {
     if (isMars == true) {
-      return <img id="switchMars" src="assets/switch-elements-mars.svg" alt="Switch" className="switchPlanet w-50"></img>
+      return <img id="switchMars" src={swithEarth} alt="Switch" className="switchPlanet w-50"></img>
     } else {
-      return <img id="switchEarth" src="assets/switch-elements-earth.svg" alt="Switch" className="switchPlanet w-50"></img>
+      return <img id="switchEarth"  src={swithMars} alt="Switch" className="switchPlanet w-50"></img>
     }
   }
 

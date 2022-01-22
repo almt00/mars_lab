@@ -17,7 +17,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-sm fixed-top mx-5" id="navbarNav">
+    <nav className="navbar navbar-expand-sm fixed-top px-5" id="navbarNav">
       <div className="container-fluid">
         <form className="d-flex align-items-center">
           <InputCity />

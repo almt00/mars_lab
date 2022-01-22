@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="">
         <button className="btn btn-warning"></button>
         <p>
           Edit <code>src/App.js</code> and save to reload.

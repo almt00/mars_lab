@@ -1,11 +1,13 @@
-import './Footer.css';
+import "./Footer.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function Footer() {
   return (
-    <footer>
+    <footer className="">
       <p>Author: Hege Refsnes</p>
       <p>
-        <a href='mailto:hege@example.com'>hege@example.com</a>
+        <a href="mailto:hege@example.com">hege@example.com</a>
       </p>
     </footer>
   );

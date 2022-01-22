@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button className="btn btn-warning"></button>
+        <div className="fa"></div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

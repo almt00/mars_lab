@@ -1,0 +1,16 @@
+.back {
+    background-color: black;
+    height: 90px;
+  }
+
+.letter {
+    font-weight: lighter;
+    color: white;
+    /* font-size: 20px; */
+}
+
+.sizeCircle {
+  font-size: 5px;
+}
+
+

@@ -1,18 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function InputCity() {
-  
-  /* 
-  const [search, setSearch] = useState("");
   const [cities, setCities] = useState([]);
 
-  const atualiza = () => {
-    let valor = document.getElementById("inputCity").value;
-    setSearch(valor);
-  };
-
-  useEffect(() => {
+  function fetchedData() {
     fetch("citiesList.json", {
       headers: {
         "Content-Type": "application/json",
@@ -28,27 +21,33 @@ export default function InputCity() {
         setCities(myJson);
         console.log(cities);
       });
-  }, [search]); 
-  */
+  }
+
+  window.onload = function () {
+    fetchedData();
+  };
 
   return (
     <React.Fragment>
       <input
         id="inputCity"
         list="cidades"
-        className="form-control-sm me-2 input"
+        className="form-control-sm me-2"
         type="text"
         placeholder="Procurar Cidade"
-        // onKeyUp={() => atualiza()}
       />
       <datalist id="cidades">
-        {/* {cities.map((element) => {
-          <option value={element.city} />;
-        })} */}
+        {cities.map((element, key) => {
+          return (
+            <option
+              key={key}
+              value={`${element.city}, ${element.admin_name}`}
+            />
+          );
+        })}
         <option value="default" />
       </datalist>
-
-      <i className="fas fa-map-marker-alt"></i>
+      <FontAwesomeIcon icon="map-marker-alt" size="xs" className="me-1" />
       <span>Aveiro</span>
       {/* outro componente? */}
     </React.Fragment>

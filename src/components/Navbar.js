@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 import InputCity from "./InputCity";
 
+
 let navItems = ["Recente", "5 dias", "Foto", "Comparar"];
 
 function Navbar() {
@@ -15,18 +16,6 @@ function Navbar() {
     }
   }
 
-  /*   function switchPlanet () {
-    switch (isMars) {
-      case true:
-        img = "switch-elements-earth.svg";
-        break;
-      case false:
-        img = "switch-elements-mars.svg";
-        break;
-      default:
-        break;
-    }
-  }; */
   return (
     <nav className="navbar navbar-expand-sm fixed-top mx-5" id="navbarNav">
       <div className="container-fluid">

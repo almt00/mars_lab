@@ -5,6 +5,7 @@
 body {
   background-color: black;
   font-family: 'Dosis', sans-serif;
+  color: white;
 }
 
 #root {
@@ -65,7 +66,5 @@ body {
   }
 }
 
-.Footer {
-  
-}
+
 

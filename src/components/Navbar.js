@@ -3,9 +3,8 @@ import "./Navbar.css";
 import InputCity from "./InputCity";
 
 
-let navItems = ["Recente", "5 dias", "Foto", "Comparar"];
-
 function Navbar() {
+  let navItems = ["Recente", "5 dias", "Foto", "Comparar"];
   const isMars = true;
 
   function showSwitch() {
@@ -17,7 +16,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-sm fixed-top px-5" id="navbarNav">
+    <nav className="navbar navbar-expand-sm px-3" id="navbarNav">
       <div className="container-fluid">
         <form className="d-flex align-items-center">
           <InputCity />

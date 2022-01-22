@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -28,7 +27,7 @@ export default function InputCity() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <input
         id="inputCity"
         list="cidades"
@@ -47,9 +46,9 @@ export default function InputCity() {
         })}
         <option value="default" />
       </datalist>
-      <FontAwesomeIcon icon="map-marker-alt" size="xs" className="me-1" />
+      <FontAwesomeIcon icon="map-marker-alt" size="s" className="me-1" />
       <span>Aveiro</span>
       {/* outro componente? */}
-    </React.Fragment>
+    </>
   );
 }

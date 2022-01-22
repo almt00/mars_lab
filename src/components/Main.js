@@ -6,8 +6,8 @@ function Main() {
   return (
     <div className="container-fluid">
       <Recent />
-{/*       <FiveDays />
- */}    </div>
+      <FiveDays />
+    </div>
   );
 }
 export default Main;

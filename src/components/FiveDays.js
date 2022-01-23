@@ -30,7 +30,7 @@ function FiveDays() {
         </div>
         {/* temperaturas */}
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -38,7 +38,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -46,7 +46,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -54,7 +54,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -62,7 +62,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -79,7 +79,7 @@ function FiveDays() {
         </div>
         {/* temperaturas */}
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -87,7 +87,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -95,7 +95,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -103,7 +103,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>
@@ -111,7 +111,7 @@ function FiveDays() {
           </div>
         </div>
         <div className='col'>
-          <div className='card color'>
+          <div className='card background-fosco'>
             <div className='card-body'>
               <span className='textTemperature'>-70</span>
               <span className='align-top'>ºC</span>

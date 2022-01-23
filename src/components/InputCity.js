@@ -46,7 +46,7 @@ export default function InputCity() {
         })}
         <option value="default" />
       </datalist>
-      <FontAwesomeIcon icon="map-marker-alt" size="s" className="me-1" />
+      <FontAwesomeIcon icon="map-marker-alt" size="sm" className="me-1" />
       <span>Aveiro</span>
       {/* outro componente? */}
     </>

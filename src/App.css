@@ -4,7 +4,7 @@
 
 body {
   background-color: black;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
   color: white;
 }
 
@@ -29,9 +29,8 @@ body {
       #1755f4 0%,
       rgba(28, 83, 224, 0) 100%
     );
-    background-repeat: repeat-y;
+  background-repeat: repeat-y;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -67,10 +66,9 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-
 .titulo {
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 3.75rem;
   letter-spacing: 0.1em;
 }
 
@@ -85,4 +83,10 @@ h4,
 h1 {
   font-weight: 600;
   font-size: 3.5rem;
+}
+
+.medium,
+p {
+  font-weight: 500;
+  font-size: 1.75rem;
 }

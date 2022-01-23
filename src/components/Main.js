@@ -7,6 +7,9 @@ function Main() {
     <div className="">
       <Recent />
       <FiveDays />
+      <div className="row">
+        
+      </div>
     </div>
   );
 }

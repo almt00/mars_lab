@@ -34,7 +34,7 @@ function Navbar() {
             {navItems.map((item) => {
               return (
                 <li className="nav-item" key={item}>
-                  <a className="nav-link text-white" href="#">
+                  <a className="nav-link text-white" href={"#"+item}>
                     {item}
                   </a>
                 </li>

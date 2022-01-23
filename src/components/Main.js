@@ -11,7 +11,7 @@ function Main() {
       <Recent />
       <FiveDays />
       <div className="background_blue">
-        <div className="row background m-0">
+        <div className="row background img-fluid m-0">
           <PlanetImage />
           <Compare />
         </div>

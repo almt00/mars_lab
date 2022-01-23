@@ -17,11 +17,17 @@ function Navbar() {
     }
   }
 
+  function searchbar (){
+    if (isMars===false) {
+      return <InputCity />
+    }
+  }
+
   return (
     <nav className="navbar navbar-expand-sm px-3" id="navbarNav">
       <div className="container-fluid">
         <form className="d-flex align-items-center">
-          <InputCity />
+          {searchbar()} 
         </form>
         <div>
           <ul className="navbar-nav me-auto">

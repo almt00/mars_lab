@@ -19,7 +19,7 @@ function Compare() {
             </div>
           </div>
           <div className='col-7 ms-5 me-0'>
-            <div className='bg-dark temperaturas '>
+            <div className='background-fosco temperaturas '>
               <h5 className='text-uppercase mb-0'>Terra</h5>
               <p>Aveiro</p>
               <div>
@@ -48,7 +48,7 @@ function Compare() {
         </div>
         <div className='col-5 m-2 me-0 ms-auto mt-5'>
           <div className='col-8 float-end me-5'>
-            <div className='bg-dark temperaturas'>
+            <div className='background-fosco temperaturas'>
               <h5 className='text-uppercase mb-4 mt-2'>Marte</h5>
               <div>
                 <span className='m_texto'>

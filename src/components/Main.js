@@ -4,7 +4,7 @@ import Recent from "./Recent";
 
 function Main() {
   return (
-    <div className="container-fluid">
+    <div className="">
       <Recent />
       <FiveDays />
     </div>

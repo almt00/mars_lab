@@ -4,8 +4,8 @@ import "./Recent.css";
 function Recent() {
   return (
     <div className="row">
-      <div className="col-7 texto_recente my-5 text-end">
-        <h1 className=" display-1">
+      <div className="col-7 texto_recente my-5 text-center">
+        <h1 className=" display-1 ">
           <strong>13 JAN 2022</strong>
         </h1>
         <h4>A MÃE DIZ PARA LEVARES UM CASAQUINHO</h4>

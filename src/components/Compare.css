@@ -1,7 +1,18 @@
 .temperaturas {
-  padding-bottom: 80px;
-  padding-top: 80px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-radius: 20px;
 }
 
+.margem {
+  margin-bottom: 100px;
+}
+
+
+.m_texto {
+  margin-right: 50px;
+}
+
+.tam_letra {
+  font-size: 25px;
+}

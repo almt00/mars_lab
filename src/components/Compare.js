@@ -1,9 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Compare.css';
 import InputCity from './InputCity';
-// import foto_terra from '../assets/earth_compare.png';
 
 function Compare() {
+  const isMars = true;
+
+  function searchbar() {
+    if (isMars === true) {
+      return <InputCity />;
+    }
+  }
   return (
     <>
       <div className='row'>
@@ -41,9 +47,7 @@ function Compare() {
               </h1>
               <h5 className='fw-bolder'>Média</h5>
             </div>
-            <div className='mt-3'>
-              <InputCity />
-            </div>
+            <div className='mt-3'>{searchbar()}</div>
           </div>
         </div>
         <div className='col-5 m-2 me-0 ms-auto mt-5'>

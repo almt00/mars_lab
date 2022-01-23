@@ -1,0 +1,16 @@
+.retangulo_imagem {
+  background: linear-gradient(
+    65.46deg,
+    #000000 0%,
+    rgba(0, 0, 0, 0.31) 27.83%,
+    rgba(0, 0, 0, 0.15) 42.42%,
+    rgba(0, 0, 0, 0) 99.21%
+  );
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  padding: 40px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}

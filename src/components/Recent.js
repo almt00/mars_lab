@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Recent.css";
+import mars from "./../assets/Mars0169.png"
 
 function Recent() {
   return (
@@ -21,7 +22,7 @@ function Recent() {
         </div>
       </div>
       <div className="col-5 p-0 ">
-        <img id="mars_bg" src="assets/Mars0169.png" className="img-fluid m-auto"></img>
+        <img id="mars_bg" src={mars} className="img-fluid m-auto"></img>
       </div>
     </div>
   );

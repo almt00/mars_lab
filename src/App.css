@@ -29,6 +29,7 @@ body {
       #1755f4 0%,
       rgba(28, 83, 224, 0) 100%
     );
+    background-repeat: repeat-y;
 }
 
 .App-logo {

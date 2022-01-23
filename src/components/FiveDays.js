@@ -3,7 +3,7 @@ import './FiveDays.css';
 
 function FiveDays() {
   return (
-    <div className='fundo h-100 p-5'>
+    <div className='row fundo h-100 p-5'>
       {/* dias */}
       <div className='row align-items-center h-100 pt-5'>
         <div className='col-1'></div>

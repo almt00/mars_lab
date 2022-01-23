@@ -4,7 +4,7 @@ import mars from "./../assets/Mars0169.png";
 
 function Recent() {
   return (
-    <div className="row">
+    <div id="Recente" className="row">
       <div className="col-7  my-5 text-center">
         <h1 className="titulo">13 JAN 2022</h1>
         <h4 className="subtitulo">A MÃE DIZ PARA LEVARES UM CASAQUINHO</h4>

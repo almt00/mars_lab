@@ -12,11 +12,11 @@ function Compare() {
   }
   return (
     <>
-      <div className='row'>
+      <div id="Comparar" className='row'>
         <div className='col-6 margem'>
           <div className='col-9'>
             <div className='text-uppercase text-start ms-5 mt-5 mb-5'>
-              <h3 className=''>13 JAN 2022</h3>
+              <h1 className=''>13 JAN 2022</h1>
               <p>
                 Marte é em média
                 <span className='fw-bolder'> 60,9º celsius </span>

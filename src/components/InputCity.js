@@ -40,6 +40,7 @@ export default function InputCity() {
           return (
             <option
               key={key}
+              id={`${element.lat}, ${element.long}`}
               value={`${element.city}, ${element.admin_name}`}
             />
           );

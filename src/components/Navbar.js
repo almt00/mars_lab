@@ -10,7 +10,7 @@ function Navbar() {
   const isMars = true;
 
   function showSwitch() {
-    if (isMars == true) {
+    if (isMars != true) {
       return <img id="switchMars" src={switchEarth} alt="Switch" className="switchPlanet w-50"></img>
     } else {
       return <img id="switchEarth"  src={switchMars} alt="Switch" className="switchPlanet w-50"></img>

@@ -12,7 +12,7 @@ function Compare() {
   return (
     <>
       <div id='Comparar' className='row'>
-        <div className='col-6 margem'>
+        <div className='col-6 margem padding_topo'>
           <div className='text-uppercase text-start ms-5 mt-5 mb-5'>
             <h1 className=''>13 JAN 2022</h1>
             <h4>
@@ -24,7 +24,7 @@ function Compare() {
           <div className='col-7 ms-5 me-0'>
             <div className='background-fosco temperaturas '>
               <p className='text-uppercase mb-0'>Terra</p>
-              <p className='lead'>Aveiro</p>
+              <p className='lead linha mt-2'>Aveiro</p>
               <div>
                 <span className='m_texto'>
                   <span className='tam_letra'>12,5</span>
@@ -48,7 +48,7 @@ function Compare() {
             <div className='mt-3'>{searchbar()}</div>
           </div>
         </div>
-        <div className='col-5 m-2 me-0 ms-auto mt-5'>
+        <div className='col-5 m-2 me-0 ms-auto mt-5 padding_topo'>
           <div className='col-8 float-end me-5'>
             <div className='background-fosco temperaturas'>
               <p className='text-uppercase mb-4 mt-2'>Marte</p>

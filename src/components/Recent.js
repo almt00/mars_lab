@@ -4,9 +4,9 @@ import mars from './../assets/Mars0169.png';
 function Recent() {
   return (
     <div id='Recente' className='row '>
-      <div className='col-7  my-5 text-center'>
+      <div className='col-7  margem_bottom text-center'>
         <div className='margem_esquerda'>
-          <h1 className='titulo text-uppercase'>13 JAN 2022</h1>
+          <h1 className='titulo text-uppercase margem_top'>13 JAN 2022</h1>
           <h4 className='subtitulo text-uppercase'>
             A mãe diz para levares um casaquinho
           </h4>

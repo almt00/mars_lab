@@ -17,6 +17,10 @@
   transform: rotate(270deg);
 }
 
+.padding_cima {
+  padding-top: 100px;
+}
+
 .margem-baixo {
   padding-bottom: 100px;
 }

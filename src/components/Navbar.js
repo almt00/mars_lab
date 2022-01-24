@@ -36,7 +36,7 @@ function Navbar() {
   }
 
   return (
-    <nav className='navbar navbar-expand-sm' id='navbarNav'>
+    <nav className='navbar fixed-top navbar-expand-sm' id='navbarNav'>
       <div className='container-fluid'>
         <form className='d-flex align-items-center'>{searchbar()}</form>
         <div>

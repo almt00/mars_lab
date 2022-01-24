@@ -4,7 +4,7 @@ function FiveDays() {
   return (
     <div id="5 dias" className='row fundo h-100 p-5'>
       {/* dias */}
-      <div className='row align-items-center h-100 pt-5'>
+      <div className='row align-items-center h-100 padding_cima'>
         <div className='col-1'></div>
         <div className='col'>
           <p> 5 Jan</p>

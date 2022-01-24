@@ -24,3 +24,11 @@
 .margem_esquerda {
   margin-left: 15%;
 }
+
+.margem_top {
+  margin-top: 120px;
+}
+
+.margem_bottom {
+  margin-bottom: 100px;
+}

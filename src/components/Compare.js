@@ -41,7 +41,7 @@ function Compare() {
               </h1>
               <h5 className='fw-bolder'>Média</h5>
             </div>
-            <div className='mt-3'>
+            <div className='mt-3 text-start'>
               <InputCity />
             </div>
           </div>

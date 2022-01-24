@@ -18,11 +18,16 @@ function Navbar() {
   }
 
   return (
+    <>
+  
+
+
     <nav className='navbar fixed-top navbar-expand-sm' id='navbarNav'>
       <div className='container-fluid'>
-        <form className='d-flex align-items-center'>{searchbar()}</form>
+        <div>{searchbar()}</div>
+        {/* <form className='d-flex'>{searchbar()}</form> */}
         <div>
-          <ul className='navbar-nav me-auto'>
+          <ul className='navbar-nav me-auto d-flex mt-1'>
             {navItems.map(item => {
               return (
                 <li className='nav-item' key={item}>
@@ -41,6 +46,8 @@ function Navbar() {
         </div>
       </div>
     </nav>
+
+    </>
   );
 }
 export default Navbar;

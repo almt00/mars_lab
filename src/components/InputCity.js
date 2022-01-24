@@ -35,23 +35,25 @@ export default function InputCity() {
 
   return (
 
-    
-    <div className='row'>
-      <div className='col-8'>
+     <>
+     <form className='d-flex ms-5'>
+       <div className="">
         <input
           id='inputCity'
           list='cidades'
           className='form-control-sm border-0'
           type='text'
+          aria-label="Search"
           placeholder='Procurar Cidade'
-        ></input>
+        />
         <button
-          className='btn btn-sm text-white'
+          className='botao bg-dark text-white'
           type='button'
           onClick={() => getValue()}
         >
           Ver
         </button>
+        </div>
         <datalist id='cidades'>
           {cities.map((element, key) => {
             return (
@@ -65,17 +67,19 @@ export default function InputCity() {
             );
           })}
         </datalist>
-      </div>
-      <div className='col-4 ms-auto me-0'>
+        <div className=' ms-3 mt-1 me-0'>
         <FontAwesomeIcon
-          className=' m-2'
+          className='m-2'
           icon='map-marker-alt'
           size='sm'
           className='me-1'
         />
         <span id='showCidade'>Aveiro</span>
         {/* outro componente? */}
-      </div>
-    </div>
+        </div>
+      
+      </form> 
+      </>
+      
   );
 }

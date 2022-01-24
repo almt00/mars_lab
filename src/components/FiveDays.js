@@ -4,7 +4,7 @@ function FiveDays() {
   return (
     <div id="5 dias" className='row fundo h-100 p-5'>
       {/* dias */}
-      <div className='row align-items-center h-100 pt-5'>
+      <div className='row align-items-center h-100 padding_cima'>
         <div className='col-1'></div>
         <div className='col'>
           <p> 5 Jan</p>
@@ -24,8 +24,8 @@ function FiveDays() {
       </div>
       {/* maxima */}
       <div className='row align-items-center'>
-        <div className='col-1'>
-          <p className='temperature'>máxima</p>
+        <div className='col-1 pe-0'>
+          <p className='rotation_text lead mt-4'>máxima</p>
         </div>
         {/* temperaturas */}
         <div className='col'>
@@ -72,9 +72,9 @@ function FiveDays() {
 
       {/* linha 2 */}
       {/* minima */}
-      <div className='row align-items-center mt-5'>
-        <div className='col-1'>
-          <p className='temperature'>minima</p>
+      <div className='row align-items-center mt-5 margem-baixo'>
+        <div className='col-1 pe-0'>
+          <p className='rotation_text lead mt-4'>minima</p>
         </div>
         {/* temperaturas */}
         <div className='col'>

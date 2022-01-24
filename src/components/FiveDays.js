@@ -25,7 +25,7 @@ function FiveDays() {
       {/* maxima */}
       <div className='row align-items-center'>
         <div className='col-1'>
-          <p className='temperature'>máxima</p>
+          <p className='rotation_text lead mt-4 pb-0'>máxima</p>
         </div>
         {/* temperaturas */}
         <div className='col'>
@@ -72,9 +72,9 @@ function FiveDays() {
 
       {/* linha 2 */}
       {/* minima */}
-      <div className='row align-items-center mt-5'>
+      <div className='row align-items-center mt-5 margem-baixo'>
         <div className='col-1'>
-          <p className='temperature'>minima</p>
+          <p className='rotation_text lead mt-4'>minima</p>
         </div>
         {/* temperaturas */}
         <div className='col'>

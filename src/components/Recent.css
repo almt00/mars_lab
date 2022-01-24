@@ -10,7 +10,6 @@
   } */
 
 
-
 #mars_bg {
   float: right;
   height: 100%;
@@ -20,4 +19,8 @@
 .temperaturas {
   padding-bottom: 60px;
   padding-top: 60px;
+}
+
+.margem_esquerda {
+  margin-left: 15%;
 }

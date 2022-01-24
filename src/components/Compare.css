@@ -16,3 +16,7 @@
 .tam_letra {
   font-size: 25px;
 }
+
+.linha {
+  line-height: 0px;
+}

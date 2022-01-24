@@ -13,6 +13,10 @@
   backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
 }
 
-.temperature {
+.rotation_text {
   transform: rotate(270deg);
+}
+
+.margem-baixo {
+  padding-bottom: 100px;
 }

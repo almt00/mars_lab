@@ -1,17 +1,19 @@
 import './Compare.css';
 import InputCity from './InputCity';
+import PlanetContext from '../contexts/PlanetContext';
+import React, { useContext } from 'react';
 
 function Compare() {
-  const isMars = true;
+  const { mars } = useContext(PlanetContext);
 
   function searchbar() {
-    if (isMars === true) {
+    if (mars == true) {
       return <InputCity />;
     }
   }
   return (
     <>
-      <div id='Comparar' className='row padding_topo'>
+      <div id='Comparar' className='row padding_topo pe-0'>
       {/* padding_topo */}
         <div className='col-6 margem'> 
           <div className='text-uppercase text-start ms-5 mt-5 mb-5'>
@@ -49,7 +51,7 @@ function Compare() {
             <div className="mt-3 text-start">{searchbar()}</div>
           </div>
         </div>
-        <div className='col-5 m-2 me-0 ms-auto mt-5 padding_topo'>
+        <div className='col-5 m-2 me-0 ms-auto mt-5 pe-0'>
           <div className='col-8 float-end me-5'>
             <div className='background-fosco temperaturas'>
               <p className='text-uppercase mb-4 mt-2'>Marte</p>
@@ -70,7 +72,7 @@ function Compare() {
               <h1 className='fw-bolder mt-4'>
                 12,5<span className='lead align-text-top'>ºC</span>
               </h1>
-              <h4 className='fw-bolder mb-2 linha'>Média</h4>
+              <p className='fw-bolder mb-2 linha'>Média</p>
             </div>
           </div>
         </div>

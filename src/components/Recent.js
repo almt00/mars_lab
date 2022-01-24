@@ -1,6 +1,7 @@
 import './Recent.css';
 import mars from './../assets/Mars0169.png';
 
+
 function Recent() {
   return (
     <div id='Recente' className='row '>

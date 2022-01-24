@@ -1,29 +1,18 @@
 import './Navbar.css';
 import InputCity from './InputCity';
-import switchEarth from '../assets/switch-elements-earth.svg';
-import switchMars from '../assets/switch-elements-mars.svg';
+import React, { useContext } from 'react';
+import PlanetContext from '../contexts/PlanetContext';
+import PlanetSwitch from './PlanetSwitch';
 
 function Navbar() {
-  let navItems = ['Recente', '5 dias', 'Foto', 'Comparar'];
-  const isMars = true;
+  const { mars } = useContext(PlanetContext);
 
-  function showSwitch() {
-    if (isMars != true) {
-      return <img id="switchMars" src={switchEarth} alt="Switch" className="switchPlanet w-50"></img>
-    } else {
-      return (
-        <img
-          id='switchEarth'
-          src={switchMars}
-          alt='Switch'
-          className='switchPlanet w-50'
-        ></img>
-      );
-    }
-  }
+  let navItems = ['Recente', '5 dias', 'Foto', 'Comparar'];
+
+  console.log('Navbar', mars);
 
   function searchbar() {
-    if (isMars === false) {
+    if (mars === false) {
       return <InputCity />;
     }
   }
@@ -45,7 +34,7 @@ function Navbar() {
             })}
             <li className='nav-item'>
               <a className='nav-link text-white px-0' href='#'>
-                {showSwitch()}
+                <PlanetSwitch />
               </a>
             </li>
           </ul>

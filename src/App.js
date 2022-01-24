@@ -1,22 +1,30 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCircle,
   faCopyright,
   faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import "./App.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Main from "./components/Main";
+} from '@fortawesome/free-solid-svg-icons';
+import './App.css';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Main from './components/Main';
+import React, { useState } from 'react';
+import PlanetContext from './contexts/PlanetContext';
 
 library.add(faCopyright, faCircle, faMapMarkerAlt);
 
 function App() {
+  const [mars, setPlanet] = useState(true);
+  const value = { mars, setPlanet };
+  console.log('App', value);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Main />
+    <div className='App'>
+      <PlanetContext.Provider value={value}>
+        <Navbar />
+        <Main />
+      </PlanetContext.Provider>
       <Footer />
     </div>
   );

@@ -8,15 +8,8 @@ function Navbar() {
   const isMars = true;
 
   function showSwitch() {
-    if (isMars == true) {
-      return (
-        <img
-          id='switchMars'
-          src={switchEarth}
-          alt='Switch'
-          className='switchPlanet w-50'
-        ></img>
-      );
+    if (isMars != true) {
+      return <img id="switchMars" src={switchEarth} alt="Switch" className="switchPlanet w-50"></img>
     } else {
       return (
         <img

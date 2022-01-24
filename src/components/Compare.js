@@ -1,9 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Compare.css';
 import InputCity from './InputCity';
-// import foto_terra from '../assets/earth_compare.png';
 
 function Compare() {
+  const isMars = true;
+
+  function searchbar() {
+    if (isMars === true) {
+      return <InputCity />;
+    }
+  }
   return (
     <>
       <div id="Comparar" className='row'>

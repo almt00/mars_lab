@@ -11,8 +11,9 @@ function Compare() {
   }
   return (
     <>
-      <div id='Comparar' className='row'>
-        <div className='col-6 margem padding_topo'>
+      <div id='Comparar' className='row padding_topo'>
+      {/* padding_topo */}
+        <div className='col-6 margem'> 
           <div className='text-uppercase text-start ms-5 mt-5 mb-5'>
             <h1 className=''>13 JAN 2022</h1>
             <h4>

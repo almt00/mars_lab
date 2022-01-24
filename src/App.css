@@ -2,11 +2,14 @@
   text-align: center;
 }
 
+
 body {
   background-color: black;
-  font-family: "Dosis", sans-serif;
+  font-family: 'Dosis', sans-serif;
   color: white;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -87,8 +90,6 @@ h4,
   font-size: 1.5rem;
 }
 
-
-
 .medium,
 p {
   font-weight: 500;
@@ -98,5 +99,3 @@ p {
 .smaller {
   font-size: 1rem;
 }
-
-

@@ -5,14 +5,14 @@ import PlanetContext from '../contexts/PlanetContext';
 import PlanetSwitch from './PlanetSwitch';
 
 function Navbar() {
-  const { mars } = useContext(PlanetContext);
+  const { isMars } = useContext(PlanetContext);
 
   let navItems = ['Recente', '5 dias', 'Foto', 'Comparar'];
 
-  console.log('Navbar', mars);
+  console.log('Navbar', isMars);
 
   function searchbar() {
-    if (mars === false) {
+    if (isMars === false) {
       return <InputCity />;
     }
   }

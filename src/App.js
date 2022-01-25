@@ -15,8 +15,8 @@ import PlanetContext from './contexts/PlanetContext';
 library.add(faCopyright, faCircle, faMapMarkerAlt);
 
 function App() {
-  const [mars, setPlanet] = useState(true);
-  const value = { mars, setPlanet };
+  const [isMars, setPlanet] = useState(true);
+  const value = { isMars, setPlanet };
   console.log('App', value);
 
   return (

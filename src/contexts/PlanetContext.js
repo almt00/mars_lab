@@ -1,7 +1,7 @@
 import React from "react"
 
 const PlanetContext = React.createContext({
-  mars: true,
+  isMars: true,
   setPlanet: () => {},
 })
 

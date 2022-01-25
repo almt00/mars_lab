@@ -1,11 +1,7 @@
 import "./Recent.css";
 import mars from "./../assets/Mars0169.png";
-import React, { useContext, useState, useEffect } from "react";
-import PlanetContext from "../contexts/PlanetContext";
 
 function Recent(props) {
-  const { isMars } = useContext(PlanetContext);
-  console.log(isMars);
   const firstDay = props.marsData.soles[0];
   return (
     <div id="Recente" className="row ">

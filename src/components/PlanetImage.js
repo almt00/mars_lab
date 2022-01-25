@@ -7,11 +7,11 @@ function PlanetImage() {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    // let date = '2020-9-12';
+    let date = '2020-9-12';
     let key = '6V8udqVw619d0m4Cz925WdHBziNALmaeNrel8Jc8';
     fetch(
       // `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?&api_key=6V8udqVw619d0m4Cz925WdHBziNALmaeNrel8Jc8`
-      `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=${key}`
+      `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${key}`
     )
       .then(response => {
         return response.json();
@@ -30,11 +30,11 @@ function PlanetImage() {
           photosMars.photos.length > 0 ? (
             <div id='Foto' className='col-8 text-center'>
               <div className='retangulo_imagem me-auto ms-0'>
-              <img
-                style={{ width: 400 }}
-                src={photosMars.photos[0].img_src}
-                className='img-fluid'
-              ></img>
+                <img
+                  style={{ width: 400 }}
+                  src={photosMars.photos[0].img_src}
+                  className='img-fluid'
+                ></img>
               </div>
             </div>
           ) : (

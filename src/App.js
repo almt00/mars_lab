@@ -11,19 +11,23 @@ import Navbar from './components/Navbar';
 import Main from './components/Main';
 import React, { useState } from 'react';
 import PlanetContext from './contexts/PlanetContext';
+import CityContext from './contexts/CityContext';
 
 library.add(faCopyright, faCircle, faMapMarkerAlt);
 
 function App() {
   const [isMars, setPlanet] = useState(true);
+  const [city, setCity] = useState('Aveiro');
   const value = { isMars, setPlanet };
-  console.log('App', value);
+  const nameCity = { city, setCity };
 
   return (
     <div className='App'>
       <PlanetContext.Provider value={value}>
-        <Navbar />
-        <Main />
+        <CityContext.Provider value={nameCity}>
+          <Navbar />
+          <Main />
+        </CityContext.Provider>
       </PlanetContext.Provider>
       <Footer />
     </div>

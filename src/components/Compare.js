@@ -4,10 +4,10 @@ import PlanetContext from '../contexts/PlanetContext';
 import React, { useContext } from 'react';
 
 function Compare() {
-  const { mars } = useContext(PlanetContext);
+  const { isMars } = useContext(PlanetContext);
 
   function searchbar() {
-    if (mars == true) {
+    if (isMars == true) {
       return <InputCity />;
     }
   }

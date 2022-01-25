@@ -1,25 +1,44 @@
-import './Main.css';
-import FiveDays from './FiveDays';
-import Recent from './Recent';
-import PlanetImage from './PlanetImage';
-import Compare from './Compare';
-import React, { useContext } from "react"
-import PlanetContext from "../contexts/PlanetContext"
-
+import "./Main.css";
+import FiveDays from "./FiveDays";
+import Recent from "./Recent";
+import PlanetImage from "./PlanetImage";
+import Compare from "./Compare";
+import React, { useContext, useState, useEffect } from "react";
+import PlanetContext from "../contexts/PlanetContext";
 
 function Main() {
+  const { isMars } = useContext(PlanetContext);
+  const [marsData, setMarsData] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
-  const { mars } = useContext(PlanetContext)
+  useEffect(() => {
+    if (isMars === true) {
+      fetch(
+        "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setMarsData(data);
+          setHasLoaded(true);
+        });
+    } else if (isMars === false) {
+      console.log("fetch earth's weather");
+    }
 
-  console.log('Main', mars)
+    return function () {
+      setMarsData([]);
+      setHasLoaded(false);
+    };
+  }, [isMars]);
 
 
   return (
     <div>
-      <Recent />
+      {hasLoaded ? <Recent marsData={marsData} /> : <p></p>}
+     
       <FiveDays />
-      <div className='background_blue'>
-        <div className='row background img-fluid m-0'>
+      <div className="background_blue">
+        <div className="row background img-fluid m-0">
           <PlanetImage />
           <Compare />
         </div>
@@ -27,4 +46,5 @@ function Main() {
     </div>
   );
 }
+
 export default Main;

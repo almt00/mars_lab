@@ -5,20 +5,20 @@ import React, { useContext } from 'react';
 import PlanetContext from '../contexts/PlanetContext';
 
 function PlanetSwitch() {
-  const { mars, setPlanet } = useContext(PlanetContext);
-  console.log(mars, 'switch');
+  const { isMars, setPlanet } = useContext(PlanetContext);
+  console.log(isMars, 'switch');
 
   return (
     <img
-      onClick={() => setPlanet(mars == false ? true : false)}
+      onClick={() => setPlanet(isMars == false ? true : false)}
       className='w-50'
       id='switchMars'
-      src={mars == false ? switchEarth : switchMars}
+      src={isMars == false ? switchEarth : switchMars}
       alt='Switch'
     >
       {/* <img
         id='switchMars'
-        src={mars == true ? switchEarth : switchMars}
+        src={isMars == true ? switchEarth : switchMars}
         alt='Switch'
         className='switchPlanet w-50'
       ></img> */}

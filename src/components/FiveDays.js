@@ -1,14 +1,43 @@
 import "./FiveDays.css";
+import React, { useContext, useState, useEffect } from "react";
+import PlanetContext from "../contexts/PlanetContext";
 
 function FiveDays(props) {
-  const weekDays = props.marsData.soles.slice(0, 5);
-  console.log(weekDays);
+  const { isMars } = useContext(PlanetContext);
+  let weekDays = props.marsData.soles.slice(0, 5);
+  let weekDaysFormat =[...weekDays].reverse();
+  const meses = [
+    "Jan",
+    "Fev",
+    "Mar",
+    "Abr",
+    "Mai",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Set",
+    "Out",
+    "Nov",
+    "Dez",
+  ];
+  weekDaysFormat.forEach((day) => {
+    let data = new Date(day.terrestrial_date);
+    let dataFormatada = data.getDate() + " " + meses[data.getMonth()];
+    day.terrestrial_date = dataFormatada;
+  });
+
+  let classname = "row h-100 p-5 ";
+  if (isMars === true) {
+    classname += "fundo-mars";
+  } else if (isMars === false) {
+    classname += "fundo-earth";
+  }
   return (
-    <div id="5 dias" className="row fundo h-100 p-5">
+    <div id="5 dias" className={classname}>
       {/* dias */}
       <div className="row align-items-center h-100 padding_cima">
         <div className="col-1"></div>
-        {weekDays.map((val) => {
+        {weekDaysFormat.map((val) => {
           return (
             <div key={val.id} className="col">
               <p> {val.terrestrial_date}</p>
@@ -22,7 +51,7 @@ function FiveDays(props) {
           <p className="rotation_text lead mt-4">máxima</p>
         </div>
         {/* temperaturas */}
-        {weekDays.map((val) => {
+        {weekDaysFormat.map((val) => {
           return (
             <div key={val.id} className="col">
               <div className="card background-fosco">
@@ -42,7 +71,7 @@ function FiveDays(props) {
             <p className="rotation_text lead mt-4">minima</p>
           </div>
           {/* temperaturas */}
-          {weekDays.map((val) => {
+          {weekDaysFormat.map((val) => {
             return (
               <div key={val.id} className="col">
                 <div className="card background-fosco">

@@ -1,5 +1,9 @@
-.fundo {
-  background-image: url('../assets/mars-zoom.svg');
+.fundo-mars {
+  background-image: url("../assets/mars-zoom.svg");
+  background-size: cover;
+}
+.fundo-earth {
+  background-image: url("../assets/earth-zoom.svg");
   background-size: cover;
 }
 

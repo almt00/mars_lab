@@ -1,15 +1,32 @@
 import "./Recent.css";
+
 import mars from "./../assets/Mars0169.png";
 
 function Recent(props) {
   const firstDay = props.marsData.soles[0];
+  let data = new Date(firstDay.terrestrial_date);
+  const meses = [
+    "Jan",
+    "Fev",
+    "Mar",
+    "Abr",
+    "Mai",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Set",
+    "Out",
+    "Nov",
+    "Dez",
+  ];
+  let dataFormatada =
+    data.getDate() + " " + meses[data.getMonth()] + " " + data.getFullYear();
+
   return (
     <div id="Recente" className="row ">
       <div className="col-7  margem_bottom text-center">
         <div className="margem_esquerda">
-          <h1 className="titulo text-uppercase margem_top">
-            {firstDay.terrestrial_date}
-          </h1>
+          <h1 className="titulo text-uppercase margem_top">{dataFormatada}</h1>
           <h4 className="subtitulo text-uppercase">
             A mãe diz para levares um casaquinho
           </h4>

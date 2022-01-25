@@ -31,12 +31,23 @@ function Main() {
     };
   }, [isMars]);
 
+  function fetched() {
+    if (hasLoaded === true) {
+      return (
+        <>
+          <Recent marsData={marsData} />
+          <FiveDays marsData={marsData} />
+        </>
+      );
+    } else {
+      return;
+    }
+  }
 
   return (
     <div>
-      {hasLoaded ? <Recent marsData={marsData} /> : <p></p>}
-     
-      <FiveDays />
+      {fetched()}
+      {/* <FiveDays /> */}
       <div className="background_blue">
         <div className="row background img-fluid m-0">
           <PlanetImage />

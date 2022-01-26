@@ -11,38 +11,66 @@ function Main() {
   const { isMars } = useContext(PlanetContext);
   const { city, setCity } = useContext(CityContext);
   const [marsData, setMarsData] = useState([]);
+  const [weatherEarth, setWeatherEarth] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    if (isMars === true) {
+    fetch(
+      "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setMarsData(data);
+        setHasLoaded(true);
+      });
+
+    if (isMars === false) {
+      const key = "0ef43ea1a9f6034b92c032da2bbf99f2";
+      let lat = city.lat;
+      let long = city.lng;
+      if (hasLoaded === true) {
+        let marsTime = marsData.soles[0].terrestrial_date;
+        let today = new Date();
+        let dif = new Date(marsTime) - today;
+        //console.log("diferença ",dif);
+        var date = Date.parse(today) / 1000;
+        //console.log(date);
+      } else {
+        var date = "1643108104";
+      }
+      //console.log("fetch terra");
       fetch(
-        "https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json"
+        `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=metric&dt=${date}&appid=${key}`
       )
         .then((response) => response.json())
         .then((data) => {
-          setMarsData(data);
+          setWeatherEarth(data);
           setHasLoaded(true);
+          //console.log(data);
         });
-    } else if (isMars === false) {
-      console.log("fetch earth's weather");
     }
 
     return function () {
       setMarsData([]);
       setHasLoaded(false);
     };
-  }, [isMars]);
+  }, [isMars, city]);
 
   function fetched() {
-    if (hasLoaded === true) {
+    if (hasLoaded === true && isMars === true) {
       return (
         <>
           <Recent marsData={marsData} />
           <FiveDays marsData={marsData} />
         </>
       );
-    } else {
-      return;
+    } else if (hasLoaded === true && isMars === false) {
+      return (
+        <>
+          <Recent weatherEarth={weatherEarth} />
+          {/* <FiveDays weatherEarth={weatherEarth} /> */}
+        </>
+      );
     }
   }
 

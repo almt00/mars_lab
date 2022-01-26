@@ -5,7 +5,7 @@ import PlanetContext from "../contexts/PlanetContext";
 function FiveDays(props) {
   const { isMars } = useContext(PlanetContext);
   let weekDays = props.marsData.soles.slice(0, 5);
-  let weekDaysFormat =[...weekDays].reverse();
+  let weekDaysFormat = [...weekDays].reverse();
   const meses = [
     "Jan",
     "Fev",
@@ -32,6 +32,7 @@ function FiveDays(props) {
   } else if (isMars === false) {
     classname += "fundo-earth";
   }
+
   return (
     <div id="5 dias" className={classname}>
       {/* dias */}

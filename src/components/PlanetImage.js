@@ -28,13 +28,16 @@ function PlanetImage() {
       <div>
         {load === true ? (
           photosMars.photos.length > 0 ? (
-            <div id='Foto' className='col-8 text-center'>
+            <div id='Foto' className='col-8 text-center pt-3'>
               <div className='retangulo_imagem me-auto ms-0'>
-                <img
-                  style={{ width: 400 }}
-                  src={photosMars.photos[0].img_src}
-                  className='img-fluid'
-                ></img>
+                <div
+                  style={{
+                    width: 550,
+                    height: 400,
+                    backgroundImage: `url(${photosMars.photos[0].img_src})`,
+                    backgroundSize: 'cover',
+                  }}
+                ></div>
               </div>
             </div>
           ) : (

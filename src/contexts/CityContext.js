@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const CityContext = React.createContext({
-  city: 'Aveiro',
-  lat: 40.6389,
-  lng: -8.6553,
+  city: { city: "Aveiro", lat: 40.6389, lng: -8.6553 }, // opcional
   setCity: () => {},
 });
 

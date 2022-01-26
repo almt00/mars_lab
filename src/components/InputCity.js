@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
 import CityContext from "../contexts/CityContext";
-import { parse } from "@fortawesome/fontawesome-svg-core";
 
 export default function InputCity() {
   const { city, setCity } = useContext(CityContext);
   const [cities, setCities] = useState([]);
-
   useEffect(() => {
     fetch("citiesList.json", {
       headers: {
@@ -20,7 +18,6 @@ export default function InputCity() {
       })
       .then((myJson) => {
         setCities(myJson);
-        console.log(cities);
       });
   }, []);
 
@@ -30,18 +27,13 @@ export default function InputCity() {
     let id = document.querySelector('option[value="' + Value + '"]').id;
     let strCoord = id;
     let arrCoord = strCoord.split(",");
-    let cityObj = {
+
+    // definindo o context city aqui (confirmar)// n estava a dar assim acho q e pq o metodo so define a cidade
+    setCity({
       city: Value,
       lat: parseFloat(arrCoord[0]),
       lng: parseFloat(arrCoord[1]),
-    };
-    console.log(cityObj);
-
-    // definindo o context city aqui (confirmar)// n estava a dar assim acho q e pq o metodo so define a cidade
-    /* setCity(Value, parseFloat(arrCoord[0]), parseFloat(arrCoord[1]));
-    console.log("contexto ", CityContext); */
-
-    document.getElementById("showCidade").innerHTML = cityObj.city;
+    });
   }
   return (
     <>
@@ -83,8 +75,8 @@ export default function InputCity() {
             size="sm"
             className="me-1"
           />
-          <span id="showCidade">{city}</span>
-          {console.log("state", city)}
+          <span id="showCidade">{city.city}</span>
+
           {/* outro componente? */}
         </div>
       </form>

@@ -5,9 +5,11 @@ import PlanetImage from "./PlanetImage";
 import Compare from "./Compare";
 import React, { useContext, useState, useEffect } from "react";
 import PlanetContext from "../contexts/PlanetContext";
+import CityContext from "../contexts/CityContext";
 
 function Main() {
   const { isMars } = useContext(PlanetContext);
+  const { city, setCity } = useContext(CityContext);
   const [marsData, setMarsData] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
 

@@ -4,6 +4,7 @@ import {
   faCircle,
   faCopyright,
   faMapMarkerAlt,
+  faImages
 } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -13,7 +14,7 @@ import React, { useState } from "react";
 import PlanetContext from "./contexts/PlanetContext";
 import CityContext from "./contexts/CityContext";
 
-library.add(faCopyright, faCircle, faMapMarkerAlt);
+library.add(faCopyright, faCircle, faMapMarkerAlt, faImages);
 
 function App() {
   const [isMars, setPlanet] = useState(true);

@@ -14,3 +14,14 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
+.imagemTamanho {
+  width: 550 px;
+  height: 400 px;
+  
+}
+
+.inverseMatriz {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+

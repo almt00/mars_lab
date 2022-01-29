@@ -30,12 +30,12 @@ function Main() {
       let long = city.lng;
       if (hasLoaded === true) {
         let marsTime = marsData.soles[0].terrestrial_date;
-        
+
         let today = new Date();
         let dif = new Date(marsTime) - today;
         //console.log("diferença ",dif);
         var date = Date.parse(today) / 1000;
-        
+
         // console.log(date);
       } else {
         var date = '1643108104';
@@ -66,6 +66,12 @@ function Main() {
           <Compare />
         </>
       );
+    } else if (hasLoaded === true && isMars === false) {
+      return(
+      <>
+        <PlanetImage />
+        <Compare />
+      </>);
     }
   }
 
@@ -87,12 +93,20 @@ function Main() {
     }
   }
 
+  let classname = 'row img-fluid m-0 ';
+  if (isMars === true) {
+    classname += 'background_marte';
+  } else if(isMars === false){
+    classname += 'background_terra';
+  }
+
   return (
     <div>
       {fetched()}
-      {/* <FiveDays /> */}
       <div className='background_blue'>
-        <div className='row background img-fluid m-0'>{fetchedBlue()}</div>
+        <div className={classname}>
+          {fetchedBlue()}
+        </div>
       </div>
     </div>
   );

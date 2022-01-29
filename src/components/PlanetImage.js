@@ -9,7 +9,6 @@ function PlanetImage(props) {
   const [photosMars, setPhotoMars] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [places, setPlaces] = useState([]);
-
   const { isMars } = useContext(PlanetContext);
 
   console.log('Foto marte', isMars); //true 4x
@@ -17,9 +16,7 @@ function PlanetImage(props) {
     console.log('Foto dentro marte', isMars); //true
     if (isMars) {
       let data = props.marsData.soles[0];
-
       let key = '6V8udqVw619d0m4Cz925WdHBziNALmaeNrel8Jc8';
-
       fetch(
         `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${data.terrestrial_date}&api_key=${key}`
       )
@@ -32,8 +29,6 @@ function PlanetImage(props) {
           console.log('resposta', response);
         });
     } else {
-      console.log('dentro terra', isMars); //false
-
       let key = 'AIzaSyAB3BY_anb29pc19gFLjlM4ReUrcJijhsg';
       let url = 'https://maps.googleapis.com/maps/api/place';
       fetch(
@@ -121,12 +116,16 @@ function PlanetImage(props) {
       }
     }
   }
+
   return (
     <>
-      <div id='Foto' className='col-8 text-center pt-3'>
+      <div
+        id='Foto'
+        className='text-center pt-3 col-8'
+        style={ isMars ? { marginLeft: 0 } : { marginLeft: 300 } }
+      >
         <div className='retangulo_imagem me-auto ms-0'>
           <div>{showPhoto()}</div>
-          {/* <div>{defaultPhoto()}</div> */}
         </div>
       </div>
     </>

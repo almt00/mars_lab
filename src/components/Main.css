@@ -1,23 +1,21 @@
- /* .background_marte {
-  background-image: url(./../assets/mars_compare.png);
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: fill;
-} 
 
 .background_terra {
-  background-image: url(./../assets/earth_compare.png);
+  background-image: url(./../assets/marte_terra_compare.png);
   background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: fill;
-}  */
+  background-size: cover;
+  width:100%;
+}
 
-.background {
+
+
+.background_marte {
   background-image: url(./../assets/terra_marte_compare.png);
   background-repeat: no-repeat;
   background-size: cover;
   width:100%;
 }
+
+
 
 
 .background_blue {

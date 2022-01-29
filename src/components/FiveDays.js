@@ -23,7 +23,7 @@ function FiveDays(props) {
   weekDaysFormat.forEach(day => {
     let data = new Date(day.terrestrial_date);
     let dataFormatada = data.getDate() + ' ' + meses[data.getMonth()];
-    day.terrestrial_date = dataFormatada;
+    day.nova_data = dataFormatada;
   });
 
   let classname = 'row h-100 p-5 ';

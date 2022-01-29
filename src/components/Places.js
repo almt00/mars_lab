@@ -15,13 +15,13 @@ export const Places = () => {
         console.log(data.candidates[0].photos[0].photo_reference);
         //return data.candidates[0].photos[0].photo_reference;
       });
-
     return setPlaces([]);
   }, []);
 
   useEffect(() => {
     let reference =
-      "Aap_uEBEdr4Mzvxp6W7yOx8pcBbaFA9mPxHjbN57-RxmXBYaBVlGx557KbYzwBmWKMY7ENeaq4ismJ9h4pFYexgHgvB7QheZL7LUXABqEVOph9jAw7EsCSlTTalNnl-fHD-60SCAEv7gJijDj_EtPxg3PaVdWzN2-hU4F-3LGoNx5BxK4EaE";
+      // "Aap_uEBEdr4Mzvxp6W7yOx8pcBbaFA9mPxHjbN57-RxmXBYaBVlGx557KbYzwBmWKMY7ENeaq4ismJ9h4pFYexgHgvB7QheZL7LUXABqEVOph9jAw7EsCSlTTalNnl-fHD-60SCAEv7gJijDj_EtPxg3PaVdWzN2-hU4F-3LGoNx5BxK4EaE";
+      "Aap_uEDgVpngLfZ1qGBp-TkAB4WFlRHBS5oMnvB732I63IHjidq3SDJYGx1QA1zR0ke5AMlsBk-qQLmoLIbbSAxdccwB8ZIol9tnVzjdo9URwlMwwg3qA21w5eaQ9mmcYHRpkS-nPUG_aBD7Cl59rMTX_HyIWuvqpss9yDp7hBbIlCjYkajS";
     fetch(
       `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxwidth=400&photo_reference=${reference}&key=${key}`
     )

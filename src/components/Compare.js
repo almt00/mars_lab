@@ -15,14 +15,18 @@ function Compare() {
   let classrow = 'row padding_topo pe-0';
   let classtext = 'col-6 margem';
   let classmarte = 'col-8 float-end me-5';
+  let classtextmedia = 'text-uppercase mt-5 mb-5';
+
   if (isMars === true) {
     classrow += '';
     classtext += '';
     classmarte += '';
+    classtextmedia += ' ms-5 text-start';
   } else if (isMars === false) {
     classrow += ' inverse';
     classtext += ' inverse';
     classmarte += ' inverse';
+    classtextmedia += ' ms-5 me-3 text-end';
   }
 
   return (
@@ -30,7 +34,7 @@ function Compare() {
       <div id='Comparar' className={classrow}>
         {/* padding_topo */}
         <div className={classtext}>
-          <div className='text-uppercase text-start ms-5 mt-5 mb-5'>
+          <div className={classtextmedia}>
             <h1 className=''>13 JAN 2022</h1>
             <h4>
               Marte é em média
@@ -38,7 +42,10 @@ function Compare() {
               mais frio que a terra
             </h4>
           </div>
-          <div className='col-7 ms-5 me-0'>
+          <div
+            className='col-7 me-0'
+            style={isMars ? { marginLeft: 50 } : { marginLeft: 180 }}
+          >
             <div className='background-fosco temperaturas '>
               <p className='text-uppercase mb-0'>Terra</p>
               <p className='lead linha mt-2'>Aveiro</p>

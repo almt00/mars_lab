@@ -38,7 +38,6 @@ function Recent(props) {
       );
     } else if (isMars === false) {
       let firstDayEarth = props.weatherEarth; // mesmo dia da terra
-      console.log("props ", firstDayEarth);
       let earthHours = [];
       earthHours = firstDayEarth.hourly;
       var earthTemps = [];
@@ -54,8 +53,10 @@ function Recent(props) {
         );
       }
     }
-  }, [isMars, props]);
+  }, [isMars]);
 
+  
+  
 
   function order() {
     if (isMars) {
@@ -71,7 +72,7 @@ function Recent(props) {
               </h4>
             </div>
             <div className='row text-center mt-4'>
-              <div className='temperaturas col-5 background-fosco m-4 me-0 ms-auto'>
+              <div className='temperaturas col-5 background-fosco m-4 me-0 ms-5'>
                 <h1 className=''>
                   {min}
                   <span className='align-text-top medium'>ºC</span>
@@ -99,7 +100,7 @@ function Recent(props) {
             <img id='earth_bg' src={earth} className='img-fluid m-auto'></img>
           </div>
           <div className='col-7  margem_bottom text-center'>
-            <div className='margem_esquerda'>
+            <div className='margem_direita'>
               <h1 className='titulo text-uppercase margem_top'>
                 {dataFormatada}
               </h1>
@@ -115,7 +116,7 @@ function Recent(props) {
                 </h1>
                 <h2>Mínima</h2>
               </div>
-              <div className='temperaturas col-5 background-fosco m-4 me-0'>
+              <div className='temperaturas col-5 background-fosco m-4 me-0 me-5'>
                 <h1 className=''>
                   {max}
                   <span className='align-text-top medium'>ºC</span>

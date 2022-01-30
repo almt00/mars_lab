@@ -28,7 +28,11 @@
 }
 
 .margem_esquerda {
-  margin-left: 15%;
+  margin-left: 5%;
+}
+
+.margem_direita {
+  margin-right: 5%;
 }
 
 .margem_top {

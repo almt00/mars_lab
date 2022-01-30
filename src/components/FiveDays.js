@@ -43,7 +43,8 @@ function FiveDays(props) {
     });
   }
   if (isMars === false) {
-    var key = "WS78JUZN3S6EF3KQZNQZ8KR2R";
+    // var key = "WS78JUZN3S6EF3KQZNQZ8KR2R";
+    var key = 'K9RF8PG63J8YM7YXRHQ4F56E7';
     var cidade = city.city;
     let lat = city.lat;
     let long = city.lng;

@@ -53,10 +53,7 @@ function Recent(props) {
         );
       }
     }
-  }, [isMars]);
-
-  
-  
+  }, [isMars, props]);
 
   function order() {
     if (isMars) {

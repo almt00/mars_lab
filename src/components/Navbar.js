@@ -3,11 +3,9 @@ import InputCity from './InputCity';
 import React, { useContext } from 'react';
 import PlanetContext from '../contexts/PlanetContext';
 import PlanetSwitch from './PlanetSwitch';
-// import CityContext from '../contexts/CityContext';
 
 function Navbar() {
   const { isMars } = useContext(PlanetContext);
-  // const { city } = useContext(CityContext);
 
   let navItems = ['Recente', '5 dias', 'Foto', 'Comparar'];
 

@@ -163,7 +163,7 @@ function FiveDays(props) {
       {/* minima */}
       <div className="row align-items-center mt-5 margem-baixo">
         <div className="col-1 pe-0">
-          <p className="rotation_text lead mt-4">minima</p>
+          <p className="rotation_text lead mt-4">mínima</p>
         </div>
         {/* temperaturas */}
         {isMars == true

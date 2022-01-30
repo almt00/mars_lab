@@ -83,16 +83,9 @@ function Compare() {
     );
   }
 
-  // function ordenaTexto() {
-  //   if (isMars) {
-  //     return textoMarte(), textoTerra();
-  //   }
-  // }
-
   return (
     <>
       <div id='Comparar' className={classrow}>
-        {/* padding_topo */}
         <div className={classtext}>
           <div className={classtextmedia}>
             <h1 className=''>13 JAN 2022</h1>

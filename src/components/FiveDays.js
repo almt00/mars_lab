@@ -76,18 +76,16 @@ function FiveDays(props) {
 
       setDataFormatadaTerra(dateArr);
     }
-
-    return setWeekDaysFormatEarth([]), setMin(""), setMax("");
+    
+    return (
+      setWeekDaysFormatEarth([]),
+      setMin(""),
+      setMax(""),
+      setDataFormatadaTerra([])
+    );
   }, [cidade]);
 
-  if (isMars === false) {
-    weekDaysFormatEarth.map((day) => {
-      let data = new Date(day.datetime);
-      let data_formatada = data.getDate() + " " + meses[data.getMonth()];
-      dateArr.push(data_formatada);
-      console.log(dateArr);
-    });
-  }
+  
   function displayDays() {
     weekDaysFormatEarth.map((day) => {
       let data = new Date(day.datetime);
@@ -95,10 +93,11 @@ function FiveDays(props) {
       dateArr.push(data_formatada);
       console.log(dateArr);
     });
+
     console.log(dateArr);
-    dateArr.map((val) => {
+    return dateArr.map((val, key) => {
       return (
-        <div key={val} className="col">
+        <div key={key} className="col">
           <p> {val}</p>
         </div>
       );
@@ -146,9 +145,9 @@ function FiveDays(props) {
                 </div>
               );
             })
-          : weekDaysFormatEarth.map((val) => {
+          : weekDaysFormatEarth.map((val, key) => {
               return (
-                <div key={val.id} className="col">
+                <div key={key} className="col">
                   <div className="card background-fosco">
                     <div className="card-body">
                       <span className="textTemperature">{val.tempmax}</span>
@@ -179,9 +178,9 @@ function FiveDays(props) {
                 </div>
               );
             })
-          : weekDaysFormatEarth.map((val) => {
+          : weekDaysFormatEarth.map((val, key) => {
               return (
-                <div key={val.id} className="col">
+                <div key={key} className="col">
                   <div className="card background-fosco">
                     <div className="card-body">
                       <span className="textTemperature">{val.tempmin}</span>

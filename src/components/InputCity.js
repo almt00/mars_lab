@@ -22,6 +22,7 @@ export default function InputCity() {
       .then(myJson => {
         setCities(myJson);
       });
+      return setCities ([])
   }, []);
 
   function getValue() {

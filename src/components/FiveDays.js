@@ -24,6 +24,7 @@ function FiveDays(props) {
     let data = new Date(day.terrestrial_date);
     let dataFormatada = data.getDate() + ' ' + meses[data.getMonth()];
     day.nova_data = dataFormatada;
+    console.log('day', day.nova_data);
   });
 
   let classname = 'row h-100 p-5 ';
@@ -41,7 +42,7 @@ function FiveDays(props) {
         {weekDaysFormat.map(val => {
           return (
             <div key={val.id} className='col'>
-              <p> {val.terrestrial_date}</p>
+              <p> {val.nova_data}</p>
             </div>
           );
         })}

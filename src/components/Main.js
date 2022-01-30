@@ -21,6 +21,7 @@ function Main() {
       .then((response) => response.json())
       .then((data) => {
         setMarsData(data);
+        console.log(data);
         setHasLoaded(true);
       });
 
@@ -31,7 +32,6 @@ function Main() {
       if (hasLoaded === true) {
         let marsTime = marsData.soles[0].terrestrial_date;
         let today = new Date();
-        let dif = new Date(marsTime) - today;
         //console.log("diferença ",dif);
         var date = Date.parse(today) / 1000;
         //console.log(date);
@@ -58,6 +58,7 @@ function Main() {
 
   function fetched() {
     if (hasLoaded === true && isMars === true) {
+      console.log(marsData);
       return (
         <>
           <Recent marsData={marsData} />
@@ -68,7 +69,7 @@ function Main() {
       return (
         <>
           <Recent weatherEarth={weatherEarth} />
-          {/* <FiveDays weatherEarth={weatherEarth} /> */}
+          <FiveDays weatherEarth={weatherEarth} />
         </>
       );
     }
@@ -80,7 +81,7 @@ function Main() {
       {/* <FiveDays /> */}
       <div className="background_blue">
         <div className="row background img-fluid m-0">
-          <PlanetImage />
+          {/* <PlanetImage /> */}
           <Compare />
         </div>
       </div>

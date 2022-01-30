@@ -1,10 +1,16 @@
 import "./Recent.css";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import PlanetContext from "../contexts/PlanetContext";
 import mars from "./../assets/Mars0169.png";
+import CityContext from "../contexts/CityContext";
 
 function Recent(props) {
+  //const { city, setCity } = useContext(CityContext);
   const { isMars } = useContext(PlanetContext);
+  const [min, setMin] = useState("");
+  const [max, setMax] = useState("");
+  const [dataFormatada, setDataFormatada] = useState("");
+
   const meses = [
     "Jan",
     "Fev",
@@ -19,38 +25,34 @@ function Recent(props) {
     "Nov",
     "Dez",
   ];
-  if (isMars === true) {
-    let firstDayMars = props.marsData.soles[0]; // dia marte
-    var min = firstDayMars.min_temp;
-    var max = firstDayMars.max_temp;
-    var data = new Date(firstDayMars.terrestrial_date); // data formatada
-    var dataFormatada = `${data.getDate()} ${
-      meses[data.getMonth()]
-    } ${data.getFullYear()}`;
-  } else if (isMars === false) {
-    let firstDayEarth = props.weatherEarth; // mesmo dia da terra
-    //console.log("props ", firstDayEarth);
-    let earthHours = [];
-    earthHours = firstDayEarth.hourly;
-    //console.log("earth hours ", earthHours);
-    var earthTemps = [];
 
-    if (earthHours != undefined) {
-      earthHours.forEach((hour) => {
-        earthTemps.push(hour.temp);
-      });
-
-      //console.log("earth temps ", earthTemps);
-      var min = Math.round(Math.min(...earthTemps));
-      var max = Math.round(Math.max(...earthTemps));
-      //console.log(min, max);
-      var data = new Date(firstDayEarth.current.dt * 1000); // data formatada
-      //console.log(data);
-      var dataFormatada = `${data.getDate()} ${
-        meses[data.getMonth()]
-      } ${data.getFullYear()}`;
+  useEffect(() => {
+    if (isMars === true) {
+      let firstDayMars = props.marsData.soles[0]; // dia marte
+      setMin(firstDayMars.min_temp);
+      setMax(firstDayMars.max_temp);
+      var date = new Date(firstDayMars.terrestrial_date); // data formatada
+      setDataFormatada(
+        `${date.getDate()} ${meses[date.getMonth()]} ${date.getFullYear()}`
+      );
+    } else if (isMars === false) {
+      let firstDayEarth = props.weatherEarth; // mesmo dia da terra
+      let earthHours = [];
+      earthHours = firstDayEarth.hourly;
+      var earthTemps = [];
+      if (earthHours != undefined) {
+        earthHours.forEach((hour) => {
+          earthTemps.push(hour.temp);
+        });
+        setMin(Math.round(Math.min(...earthTemps)));
+        setMax(Math.round(Math.max(...earthTemps)));
+        var date = new Date(firstDayEarth.current.dt * 1000); // data formatada
+        setDataFormatada(
+          `${date.getDate()} ${meses[date.getMonth()]} ${date.getFullYear()}`
+        );
+      }
     }
-  }
+  }, [isMars]);
 
   return (
     <div id="Recente" className="row ">

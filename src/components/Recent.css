@@ -16,6 +16,12 @@
   flex-wrap: wrap;
 }
 
+#earth_bg {
+  float: left;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
 .temperaturas {
   padding-bottom: 60px;
   padding-top: 60px;

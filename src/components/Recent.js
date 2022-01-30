@@ -1,29 +1,30 @@
-import "./Recent.css";
-import React, { useContext, useState, useEffect, useRef } from "react";
-import PlanetContext from "../contexts/PlanetContext";
-import mars from "./../assets/Mars0169.png";
-import CityContext from "../contexts/CityContext";
+import './Recent.css';
+import React, { useContext, useState, useEffect, useRef } from 'react';
+import PlanetContext from '../contexts/PlanetContext';
+import mars from './../assets/Mars.png';
+import earth from './../assets/Earth.png';
+import CityContext from '../contexts/CityContext';
 
 function Recent(props) {
   //const { city, setCity } = useContext(CityContext);
   const { isMars } = useContext(PlanetContext);
-  const [min, setMin] = useState("");
-  const [max, setMax] = useState("");
-  const [dataFormatada, setDataFormatada] = useState("");
+  const [min, setMin] = useState('');
+  const [max, setMax] = useState('');
+  const [dataFormatada, setDataFormatada] = useState('');
 
   const meses = [
-    "Jan",
-    "Fev",
-    "Mar",
-    "Abr",
-    "Mai",
-    "Jun",
-    "Jul",
-    "Ago",
-    "Set",
-    "Out",
-    "Nov",
-    "Dez",
+    'Jan',
+    'Fev',
+    'Mar',
+    'Abr',
+    'Mai',
+    'Jun',
+    'Jul',
+    'Ago',
+    'Set',
+    'Out',
+    'Nov',
+    'Dez',
   ];
 
   useEffect(() => {
@@ -41,7 +42,7 @@ function Recent(props) {
       earthHours = firstDayEarth.hourly;
       var earthTemps = [];
       if (earthHours != undefined) {
-        earthHours.forEach((hour) => {
+        earthHours.forEach(hour => {
           earthTemps.push(hour.temp);
         });
         setMin(Math.round(Math.min(...earthTemps)));
@@ -54,35 +55,81 @@ function Recent(props) {
     }
   }, [isMars]);
 
+
+  function order() {
+    if (isMars) {
+      return (
+        <>
+          <div className='col-7  margem_bottom text-center'>
+            <div className='margem_esquerda'>
+              <h1 className='titulo text-uppercase margem_top'>
+                {dataFormatada}
+              </h1>
+              <h4 className='subtitulo text-uppercase'>
+                A mãe diz para levares um casaquinho
+              </h4>
+            </div>
+            <div className='row text-center mt-4'>
+              <div className='temperaturas col-5 background-fosco m-4 me-0 ms-auto'>
+                <h1 className=''>
+                  {min}
+                  <span className='align-text-top medium'>ºC</span>
+                </h1>
+                <h2>Mínima</h2>
+              </div>
+              <div className='temperaturas col-5 background-fosco m-4 me-0'>
+                <h1 className=''>
+                  {max}
+                  <span className='align-text-top medium'>ºC</span>
+                </h1>
+                <h2>Máxima</h2>
+              </div>
+            </div>
+          </div>
+          <div className='col-5 p-0 '>
+            <img id='mars_bg' src={mars} className='img-fluid m-auto'></img>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className='col-5 p-0 '>
+            <img id='earth_bg' src={earth} className='img-fluid m-auto'></img>
+          </div>
+          <div className='col-7  margem_bottom text-center'>
+            <div className='margem_esquerda'>
+              <h1 className='titulo text-uppercase margem_top'>
+                {dataFormatada}
+              </h1>
+              <h4 className='subtitulo text-uppercase'>
+                A mãe diz para levares um casaquinho
+              </h4>
+            </div>
+            <div className='row text-center mt-4'>
+              <div className='temperaturas col-5 background-fosco m-4 me-0 ms-auto'>
+                <h1 className=''>
+                  {min}
+                  <span className='align-text-top medium'>ºC</span>
+                </h1>
+                <h2>Mínima</h2>
+              </div>
+              <div className='temperaturas col-5 background-fosco m-4 me-0'>
+                <h1 className=''>
+                  {max}
+                  <span className='align-text-top medium'>ºC</span>
+                </h1>
+                <h2>Máxima</h2>
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    }
+  }
   return (
-    <div id="Recente" className="row ">
-      <div className="col-7  margem_bottom text-center">
-        <div className="margem_esquerda">
-          <h1 className="titulo text-uppercase margem_top">{dataFormatada}</h1>
-          <h4 className="subtitulo text-uppercase">
-            A mãe diz para levares um casaquinho
-          </h4>
-        </div>
-        <div className="row text-center mt-4">
-          <div className="temperaturas col-5 background-fosco m-4 me-0 ms-auto">
-            <h1 className="">
-              {min}
-              <span className="align-text-top medium">ºC</span>
-            </h1>
-            <h2>Mínima</h2>
-          </div>
-          <div className="temperaturas col-5 background-fosco m-4 me-0">
-            <h1 className="">
-              {max}
-              <span className="align-text-top medium">ºC</span>
-            </h1>
-            <h2>Máxima</h2>
-          </div>
-        </div>
-      </div>
-      <div className="col-5 p-0 ">
-        <img id="mars_bg" src={mars} className="img-fluid m-auto"></img>
-      </div>
+    <div id='Recente' className='row '>
+      {order()}
     </div>
   );
 }

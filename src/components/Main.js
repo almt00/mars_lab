@@ -13,6 +13,7 @@ function Main() {
   const [marsData, setMarsData] = useState([]);
   const [weatherEarth, setWeatherEarth] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
+ 
 
   useEffect(() => {
     fetch(

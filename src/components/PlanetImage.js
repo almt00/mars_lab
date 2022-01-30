@@ -32,7 +32,7 @@ function PlanetImage(props) {
       let key = 'AIzaSyAB3BY_anb29pc19gFLjlM4ReUrcJijhsg';
       let url = 'https://maps.googleapis.com/maps/api/place';
       fetch(
-        `${url}/findplacefromtext/json?fields=formatted_address%2Cphotos&input=${city.city}&inputtype=textquery&key=${key}`
+        `https://cors-anywhere.herokuapp.com/${url}/findplacefromtext/json?fields=formatted_address%2Cphotos&input=${city.city}&inputtype=textquery&key=${key}`
       )
         .then(response => response.json())
         .then(data => {
@@ -40,7 +40,7 @@ function PlanetImage(props) {
           const reference = data.candidates[0].photos[0].photo_reference;
           console.log('ref', reference);
           return fetch(
-            `${url}/photo?maxwidth=400&maxwidth=400&photo_reference=${reference}&key=${key}`
+            `https://cors-anywhere.herokuapp.com/${url}/photo?maxwidth=400&maxwidth=400&photo_reference=${reference}&key=${key}`
           );
         })
         .then(response => response.blob())
@@ -117,14 +117,21 @@ function PlanetImage(props) {
     }
   }
 
+  let classname = 'retangulo_imagem me-auto ms-0 ';
+  if (isMars === true) {
+    classname += '';
+  } else if (isMars === false) {
+    classname += 'inverse';
+  }
+
   return (
     <>
       <div
         id='Foto'
         className='text-center pt-3 col-8'
-        style={ isMars ? { marginLeft: 0 } : { marginLeft: 300 } }
+        style={isMars ? { marginLeft: 0 } : { marginLeft: 300 }}
       >
-        <div className='retangulo_imagem me-auto ms-0'>
+        <div className={classname}>
           <div>{showPhoto()}</div>
         </div>
       </div>

@@ -18,12 +18,6 @@ function PlanetSwitch() {
       src={isMars == false ? switchEarth : switchMars}
       alt="Switch"
     >
-      {/* <img
-        id='switchMars'
-        src={isMars == true ? switchEarth : switchMars}
-        alt='Switch'
-        className='switchPlanet w-50'
-      ></img> */}
     </img>
   );
 }

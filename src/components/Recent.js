@@ -38,6 +38,7 @@ function Recent(props) {
       );
     } else if (isMars === false) {
       let firstDayEarth = props.weatherEarth; // mesmo dia da terra
+      console.log("props ", firstDayEarth);
       let earthHours = [];
       earthHours = firstDayEarth.hourly;
       var earthTemps = [];
@@ -53,7 +54,7 @@ function Recent(props) {
         );
       }
     }
-  }, [isMars]);
+  }, [isMars, props]);
 
 
   function order() {

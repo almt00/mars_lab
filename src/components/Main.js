@@ -48,7 +48,6 @@ function Main() {
         .then((data) => {
           setWeatherEarth(data);
           setHasLoaded(true);
-          //console.log(data);
         });
     }
 

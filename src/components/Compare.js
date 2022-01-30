@@ -36,11 +36,11 @@ function Compare() {
         <p className='lead linha mt-2'>Aveiro</p>
         <div>
           <span className='m_texto'>
-            <span className='tam_letra'>12,5</span>
+            <span className='tam_letra'>7</span>
             <span className=''>ºC</span>
           </span>
           <span>
-            <span className='tam_letra'>12,5</span>
+            <span className='tam_letra'>19</span>
             <span className=''>ºC</span>
           </span>
         </div>
@@ -50,7 +50,7 @@ function Compare() {
         </p>
 
         <h1 className='fw-bolder mt-4'>
-          12,5<span className='lead align-text-top'>ºC</span>
+          15,8<span className='lead align-text-top'>ºC</span>
         </h1>
         <p className='fw-bolder linha'>Média</p>
       </div>
@@ -63,11 +63,11 @@ function Compare() {
         <p className='text-uppercase mb-4 mt-2'>Marte</p>
         <div>
           <span className='m_texto'>
-            <span className='tam_letra fw-bolder'>12,5</span>
+            <span className='tam_letra fw-bolder'>-71</span>
             <span>ºC</span>
           </span>
           <span>
-            <span className='tam_letra fw-bolder'>12,5</span>
+            <span className='tam_letra fw-bolder'>-3</span>
             <span className='align-text-top'>ºC</span>
           </span>
           <p className='linha'>
@@ -76,7 +76,7 @@ function Compare() {
           </p>
         </div>
         <h1 className='fw-bolder mt-4'>
-          12,5<span className='lead align-text-top'>ºC</span>
+          -37<span className='lead align-text-top'>ºC</span>
         </h1>
         <p className='fw-bolder mb-2 linha'>Média</p>
       </div>
@@ -88,10 +88,10 @@ function Compare() {
       <div id='Comparar' className={classrow}>
         <div className={classtext}>
           <div className={classtextmedia}>
-            <h1 className=''>13 JAN 2022</h1>
+            <h1 className=''>26 JAN 2022</h1>
             <h4>
               Marte é em média
-              <span className='fw-bolder'> 60,9º celsius </span>
+              <span className='fw-bolder'> 52,8º celsius </span>
               mais frio que a terra
             </h4>
           </div>

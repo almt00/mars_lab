@@ -6,7 +6,6 @@ import earth from './../assets/Earth.png';
 import CityContext from '../contexts/CityContext';
 
 function Recent(props) {
-  //const { city, setCity } = useContext(CityContext);
   const { isMars } = useContext(PlanetContext);
   const [min, setMin] = useState('');
   const [max, setMax] = useState('');

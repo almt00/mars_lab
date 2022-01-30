@@ -11,7 +11,6 @@ function PlanetSwitch() {
     <img
       onClick={() => {
         setPlanet(isMars == false ? true : false);
-        console.log("contexto planeta ", PlanetContext);
       }}
       className="w-50"
       id="switchMars"

@@ -11,9 +11,7 @@ function PlanetImage(props) {
   const [places, setPlaces] = useState([]);
   const { isMars } = useContext(PlanetContext);
 
-  console.log('Foto marte', isMars); //true 4x
   useEffect(() => {
-    console.log('Foto dentro marte', isMars); //true
     if (isMars) {
       let data = props.marsData.soles[0];
       let key = '6V8udqVw619d0m4Cz925WdHBziNALmaeNrel8Jc8';
@@ -26,7 +24,6 @@ function PlanetImage(props) {
         .then(response => {
           setPhotoMars(response);
           setHasLoaded(true);
-          console.log('resposta', response);
         });
     } else {
       let key = 'AIzaSyAB3BY_anb29pc19gFLjlM4ReUrcJijhsg';
@@ -38,7 +35,6 @@ function PlanetImage(props) {
         .then(data => {
           setHasLoaded(true);
           const reference = data.candidates[0].photos[0].photo_reference;
-          console.log('ref', reference);
           return fetch(
             `https://cors-anywhere.herokuapp.com/${url}/photo?maxwidth=400&maxwidth=400&photo_reference=${reference}&key=${key}`
           );
@@ -47,7 +43,6 @@ function PlanetImage(props) {
         .then(imageBlob => {
           // Then create a local URL for that image and print it
           const imageObjectURL = URL.createObjectURL(imageBlob);
-          console.log(imageObjectURL);
           setPlaces(imageObjectURL);
           setHasLoaded(true);
         });

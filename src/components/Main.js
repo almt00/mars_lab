@@ -21,7 +21,6 @@ function Main() {
       .then(response => response.json())
       .then(data => {
         setMarsData(data);
-        console.log(data);
         setHasLoaded(true);
       });
 
@@ -33,14 +32,10 @@ function Main() {
         let marsTime = marsData.soles[0].terrestrial_date;
 
         let today = new Date();
-        //console.log("diferença ",dif);
         var date = Date.parse(today) / 1000;
-
-        // console.log(date);
       } else {
         var date = '1643108104';
       }
-      //console.log("fetch terra");
       fetch(
         `http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=metric&dt=${date}&appid=${key}`
       )
@@ -77,7 +72,6 @@ function Main() {
 
   function fetched() {
     if (hasLoaded === true && isMars === true) {
-      console.log(marsData);
       return (
         <>
           <Recent marsData={marsData} />

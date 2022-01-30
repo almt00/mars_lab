@@ -32,7 +32,6 @@ export default function InputCity() {
     let strCoord = id;
     let arrCoord = strCoord.split(',');
 
-    // definindo o context city aqui (confirmar)// n estava a dar assim acho q e pq o metodo so define a cidade
     setCity({
       city: Value,
       lat: parseFloat(arrCoord[0]),
@@ -87,8 +86,6 @@ export default function InputCity() {
             className='me-1'
           />
           <span id='showCidade'>{city.city}</span>
-
-          {/* outro componente? */}
         </div>
       </form>
     </>

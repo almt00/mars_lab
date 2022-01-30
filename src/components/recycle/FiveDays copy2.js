@@ -1,7 +1,7 @@
 import "./FiveDays.css";
 import React, { useContext, useState, useEffect, useRef } from "react";
-import PlanetContext from "../contexts/PlanetContext";
-import CityContext from "../contexts/CityContext";
+import PlanetContext from "../../contexts/PlanetContext";
+import CityContext from "../../contexts/CityContext";
 
 function FiveDays(props) {
   const { city, setCity } = useContext(CityContext);

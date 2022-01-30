@@ -9,9 +9,6 @@ function Navbar() {
 
   let navItems = ['Recente', '5 dias', 'Foto', 'Comparar'];
 
-  console.log('Navbar', isMars);
-  // console.log('city', city);
-
   function searchbar() {
     if (isMars === false) {
       return <InputCity />;
@@ -23,7 +20,6 @@ function Navbar() {
       <nav className='navbar fixed-top navbar-expand-sm' id='navbarNav'>
         <div className='container-fluid'>
           <div>{searchbar()}</div>
-          {/* <form className='d-flex'>{searchbar()}</form> */}
           <div>
             <ul className='navbar-nav me-auto d-flex mt-1'>
               {navItems.map(item => {

@@ -1,7 +1,7 @@
-import "./FiveDays.css";
-import React, { useContext, useState, useEffect, useRef } from "react";
-import PlanetContext from "../contexts/PlanetContext";
-import CityContext from "../contexts/CityContext";
+import './FiveDays.css';
+import React, { useContext, useState, useEffect, useRef } from 'react';
+import PlanetContext from '../contexts/PlanetContext';
+import CityContext from '../contexts/CityContext';
 
 function FiveDays(props) {
   const { city, setCity } = useContext(CityContext);
@@ -10,24 +10,24 @@ function FiveDays(props) {
   const [weekDaysFormatEarth, setWeekDaysFormatEarth] = useState([]);
   //const [weekDaysFormatMars, setWeekDaysFormatMars] = useState([]);
 
-  const [min, setMin] = useState("");
-  const [max, setMax] = useState("");
+  const [min, setMin] = useState('');
+  const [max, setMax] = useState('');
   const [dataFormatadaTerra, setDataFormatadaTerra] = useState([]);
   //const dataFormatadaTerra = useRef([]);
 
   const meses = [
-    "Jan",
-    "Fev",
-    "Mar",
-    "Abr",
-    "Mai",
-    "Jun",
-    "Jul",
-    "Ago",
-    "Set",
-    "Out",
-    "Nov",
-    "Dez",
+    'Jan',
+    'Fev',
+    'Mar',
+    'Abr',
+    'Mai',
+    'Jun',
+    'Jul',
+    'Ago',
+    'Set',
+    'Out',
+    'Nov',
+    'Dez',
   ];
 
   var dateArr = [];
@@ -36,9 +36,9 @@ function FiveDays(props) {
     var weekFormat = [...weekDays];
     var data_formatada = undefined;
     var weekDaysFormatMars = weekFormat.reverse();
-    weekDaysFormatMars.forEach((day) => {
+    weekDaysFormatMars.forEach(day => {
       let data = new Date(day.terrestrial_date);
-      data_formatada = data.getDate() + " " + meses[data.getMonth()];
+      data_formatada = data.getDate() + ' ' + meses[data.getMonth()];
       day.nova_data = data_formatada;
     });
   }
@@ -52,16 +52,16 @@ function FiveDays(props) {
 
     var diaHoje =
       dateObj.getFullYear() +
-      "-" +
+      '-' +
       (dateObj.getMonth() + 1) +
-      "-" +
+      '-' +
       dateObj.getDate();
 
     var ultimoDia =
       dateObj.getFullYear() +
-      "-" +
+      '-' +
       (dateObj.getMonth() + 1) +
-      "-" +
+      '-' +
       (dateObj.getDate() - 4);
   }
   useEffect(() => {
@@ -69,58 +69,54 @@ function FiveDays(props) {
       fetch(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cidade}/${ultimoDia}/${diaHoje}?unitGroup=metric&elements=datetime%2CdatetimeEpoch%2Cname%2Caddress%2Clatitude%2Clongitude%2Ctempmax%2Ctempmin%2Ctemp&include=days&key=${key}&contentType=json`
       )
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response => response.json())
+        .then(data => {
           setWeekDaysFormatEarth(data.days);
-          console.log(data);
         });
 
       setDataFormatadaTerra(dateArr);
     }
-    
+
     return (
       setWeekDaysFormatEarth([]),
-      setMin(""),
-      setMax(""),
+      setMin(''),
+      setMax(''),
       setDataFormatadaTerra([])
     );
   }, [cidade]);
 
-  
   function displayDays() {
-    weekDaysFormatEarth.map((day) => {
+    weekDaysFormatEarth.map(day => {
       let data = new Date(day.datetime);
-      let data_formatada = data.getDate() + " " + meses[data.getMonth()];
+      let data_formatada = data.getDate() + ' ' + meses[data.getMonth()];
       dateArr.push(data_formatada);
-      console.log(dateArr);
     });
 
-    console.log(dateArr);
     return dateArr.map((val, key) => {
       return (
-        <div key={key} className="col">
+        <div key={key} className='col'>
           <p> {val}</p>
         </div>
       );
     });
   }
 
-  let classname = "row h-100 p-5 ";
+  let classname = 'row h-100 p-5 ';
   if (isMars === true) {
-    classname += "fundo-mars";
+    classname += 'fundo-mars';
   } else if (isMars === false) {
-    classname += "fundo-earth";
+    classname += 'fundo-earth';
   }
 
   return (
-    <div id="5 dias" className={classname}>
+    <div id='5 dias' className={classname}>
       {/* dias */}
-      <div className="row align-items-center h-100 padding_cima">
-        <div className="col-1"></div>
+      <div className='row align-items-center h-100 padding_cima'>
+        <div className='col-1'></div>
         {isMars === true
-          ? weekDaysFormatMars.map((val) => {
+          ? weekDaysFormatMars.map(val => {
               return (
-                <div key={val.id} className="col">
+                <div key={val.id} className='col'>
                   <p> {val.nova_data}</p>
                 </div>
               );
@@ -128,19 +124,19 @@ function FiveDays(props) {
           : displayDays()}
       </div>
       {/* maxima */}
-      <div className="row align-items-center">
-        <div className="col-1 pe-0">
-          <p className="rotation_text lead mt-4">máxima</p>
+      <div className='row align-items-center'>
+        <div className='col-1 pe-0'>
+          <p className='rotation_text lead mt-4'>máxima</p>
         </div>
         {/* temperaturas */}
         {isMars === true
-          ? weekDaysFormatMars.map((val) => {
+          ? weekDaysFormatMars.map(val => {
               return (
-                <div key={val.id} className="col">
-                  <div className="card background-fosco">
-                    <div className="card-body">
-                      <span className="textTemperature">{val.max_temp}</span>
-                      <span className="align-top">ºC</span>
+                <div key={val.id} className='col'>
+                  <div className='card background-fosco'>
+                    <div className='card-body'>
+                      <span className='textTemperature'>{val.max_temp}</span>
+                      <span className='align-top'>ºC</span>
                     </div>
                   </div>
                 </div>
@@ -148,11 +144,11 @@ function FiveDays(props) {
             })
           : weekDaysFormatEarth.map((val, key) => {
               return (
-                <div key={key} className="col">
-                  <div className="card background-fosco">
-                    <div className="card-body">
-                      <span className="textTemperature">{val.tempmax}</span>
-                      <span className="align-top">ºC</span>
+                <div key={key} className='col'>
+                  <div className='card background-fosco'>
+                    <div className='card-body'>
+                      <span className='textTemperature'>{val.tempmax}</span>
+                      <span className='align-top'>ºC</span>
                     </div>
                   </div>
                 </div>
@@ -161,19 +157,19 @@ function FiveDays(props) {
       </div>
       {/* linha 2 */}
       {/* minima */}
-      <div className="row align-items-center mt-5 margem-baixo">
-        <div className="col-1 pe-0">
-          <p className="rotation_text lead mt-4">mínima</p>
+      <div className='row align-items-center mt-5 margem-baixo'>
+        <div className='col-1 pe-0'>
+          <p className='rotation_text lead mt-4'>mínima</p>
         </div>
         {/* temperaturas */}
         {isMars == true
-          ? weekDaysFormatMars.map((val) => {
+          ? weekDaysFormatMars.map(val => {
               return (
-                <div key={val.id} className="col">
-                  <div className="card background-fosco">
-                    <div className="card-body">
-                      <span className="textTemperature">{val.min_temp}</span>
-                      <span className="align-top">ºC</span>
+                <div key={val.id} className='col'>
+                  <div className='card background-fosco'>
+                    <div className='card-body'>
+                      <span className='textTemperature'>{val.min_temp}</span>
+                      <span className='align-top'>ºC</span>
                     </div>
                   </div>
                 </div>
@@ -181,11 +177,11 @@ function FiveDays(props) {
             })
           : weekDaysFormatEarth.map((val, key) => {
               return (
-                <div key={key} className="col">
-                  <div className="card background-fosco">
-                    <div className="card-body">
-                      <span className="textTemperature">{val.tempmin}</span>
-                      <span className="align-top">ºC</span>
+                <div key={key} className='col'>
+                  <div className='card background-fosco'>
+                    <div className='card-body'>
+                      <span className='textTemperature'>{val.tempmin}</span>
+                      <span className='align-top'>ºC</span>
                     </div>
                   </div>
                 </div>

@@ -29,8 +29,6 @@ function Main() {
       let lat = city.lat;
       let long = city.lng;
       if (hasLoaded === true) {
-        let marsTime = marsData.soles[0].terrestrial_date;
-
         let today = new Date();
         var date = Date.parse(today) / 1000;
       } else {

@@ -5,7 +5,7 @@ import PlanetContext from '../contexts/PlanetContext';
 import CityContext from '../contexts/CityContext';
 
 function PlanetImage(props) {
-  const { city, setCity } = useContext(CityContext);
+  const { city } = useContext(CityContext);
   const [photosMars, setPhotoMars] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [places, setPlaces] = useState([]);
@@ -15,6 +15,7 @@ function PlanetImage(props) {
     if (isMars) {
       let data = props.marsData.soles[0];
       let key = '6V8udqVw619d0m4Cz925WdHBziNALmaeNrel8Jc8';
+      // let day_default = '1958-01-20';
       fetch(
         `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${data.terrestrial_date}&api_key=${key}`
       )

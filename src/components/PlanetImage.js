@@ -37,7 +37,7 @@ function PlanetImage(props) {
           setHasLoaded(true);
           const reference = data.candidates[0].photos[0].photo_reference;
           return fetch(
-            `https://cors-anywhere.herokuapp.com/${url}/photo?maxwidth=400&maxwidth=400&photo_reference=${reference}&key=${key}`
+            `https://cors-anywhere.herokuapp.com/${url}/photo?maxwidth=1500&maxwidth=1500&photo_reference=${reference}&key=${key}`
           );
         })
         .then(response => response.blob())

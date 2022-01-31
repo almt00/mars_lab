@@ -48,6 +48,7 @@ function FiveDays(props) {
     var cidade = city.city;
     let lat = city.lat;
     let long = city.lng;
+    
     let dateObj = new Date();
 
     var diaHoje =

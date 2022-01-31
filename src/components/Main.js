@@ -30,7 +30,7 @@ function Main() {
       let long = city.lng;
       if (hasLoaded === true) {
         let today = new Date();
-        var date = Date.parse(today) / 1000;
+        var date = Date.parse(today) / 1000; // para UNIX (s)
       } else {
         var date = '1643108104';
       }
